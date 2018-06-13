@@ -1,0 +1,21 @@
+<div *ngIf="tvShows">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let show of tvShows">
+      <div class="row">
+        <div class="col-md-2">
+          <a [routerLink]="['/show', show.id, show.name]">
+            <img src={{show.image?.medium}} class="img-fluid img-thumbnail">
+          </a>
+        </div>
+        <div class="col-md-10">
+          <a [routerLink]="['/show', show.id, show.name]">
+            <h3 class="show-name">{{ show.name }}</h3>
+          </a>
+          <small class="float-right">{{ show.premiered | date:'longDate' }}</small>
+          <p [innerHTML]="show.summary|slice:0:350"></p>
+          <span>Category: {{ show.genres }}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

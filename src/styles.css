@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans|Monda");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+    padding-top: 30px;
+    background-color: #1e1e1e;
+    color: whitesmoke;
+    font-family: 'Monda', sans-serif;
+  }
+
+  .vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.text-justify {
+    text-align: justify;
+}
+
+a:hover {
+    text-decoration: none;
+}

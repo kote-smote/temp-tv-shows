@@ -1,0 +1,41 @@
+#show-poster {
+    width: 80%;
+}
+
+#show-official-link {
+    color: cyan;
+}
+
+h1, h3 {
+    color: yellow;
+}
+
+h5 {
+    color: lightyellow;
+}
+
+label.show-info {
+    font-weight: bold;
+    color: yellow;
+    width: 100px;
+}
+
+div.show-info p {
+    margin-bottom: 0;
+}
+
+div.show-info {
+    margin-bottom: 50px;
+}
+
+label.episode-num {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: lightyellow;
+}
+
+#episode-list li,
+#cast-list li {
+    background-color: #312e2e;
+    border: 1px solid #1f1e1e;
+}

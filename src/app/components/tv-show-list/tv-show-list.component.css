@@ -1,0 +1,15 @@
+ul li {
+    padding: 20px;
+    background-color: #312e2e;
+    border: 1px solid #1f1e1e;
+}
+
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+
+  .show-name {
+    color: yellow;
+    display: inline-block;
+  }

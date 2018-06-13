@@ -1,0 +1,56 @@
+<div *ngIf="tvShow">
+
+  <div class="row show-info">
+    <div class="col-12 col-md-4 text-center">
+      <img id="show-poster" src={{tvShow.image?.original}} class="img-fluid img-thumbnail">
+    </div>
+    <div class="col-12 col-md-8">
+      <h1>{{ tvShow.name }}</h1>
+      <p class="text-justify" [innerHTML]="tvShow.summary"></p>
+      <p><label class="show-info">Genre:</label> {{ tvShow.genres }}</p>
+      <p><label class="show-info">Premiered:</label> {{ tvShow.premiered | date:'longDate' }}</p>
+      <p><label class="show-info">Language:</label> {{ tvShow.language }}</p>
+      <p><label class="show-info">Status:</label> {{ tvShow.status }}</p>
+      <p><label class="show-info">Rating:</label> {{ tvShow.rating.average }}</p>
+      <a id="show-official-link" class="float-right" href={{tvShow.officialSite}}>Go to official site <i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+
+  <div class=row *ngIf="tvShow._embedded?.cast">
+    <div class="col-12 col-md">
+      <h3>Cast</h3>
+      <ul id="cast-list" class="list-group">
+        <li class="list-group-item" *ngFor="let performer of tvShow._embedded.cast">
+          <div class=row>
+            <div class="col-md-2">
+              <img class="img-fluid rounded-circle" src={{performer.person.image.medium}}>
+            </div>
+            <div class="col-md-8 vertical-center">
+                <h5>{{ performer.person.name }}</h5> as {{ performer.character.name }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 col-md" *ngIf="tvShow._embedded?.episodes">
+      <h3>Episodes</h3>
+      <ul id="episode-list" class="list-group">
+        <li class="list-group-item" *ngFor="let episode of tvShow._embedded?.episodes">
+          <div class="row">
+              <div class="col-md-2 vertical-center text-center">
+                <label class="episode-num">S{{ episode.season }}E{{ episode.number }}</label>
+              </div>
+              <div class="col-md-10">
+                  <h5>{{ episode.name }}</h5>
+                  <small><p class="text-justify" [innerHTML]="episode.summary | slice:0:150"></p></small>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+

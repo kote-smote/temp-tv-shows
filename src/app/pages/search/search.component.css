@@ -1,0 +1,9 @@
+input {
+    background-color: #312e2e;
+    color: whitesmoke;
+  }
+
+  input:focus {
+    background-color: #1f1d1d;
+    color: whitesmoke;
+  }

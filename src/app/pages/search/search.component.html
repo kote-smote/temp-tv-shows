@@ -1,0 +1,9 @@
+<div class="input-group">
+  <input #box type="text" (keyup)="search(box.value)" class="form-control" placeholder="Search TV Show ...">
+  <div class="input-group-append">
+    <button class="btn btn-outline-warning" type="button">Search</button>
+  </div>
+</div>
+
+<div class="alert alert-danger" *ngIf="fetchError"> An Error has occured</div>
+<app-tv-show-list *ngIf="tvShows" [tvShows]="tvShows"></app-tv-show-list>
